@@ -1,7 +1,7 @@
 //const firstName = require('./utils')
 //onst validator = require('validator')
 //const add = require('./utils')
-const getNotes = require('./notes')
+const notes = require('./notes')
 const chalk = require('chalk')
 const yargs = require('yargs')
 //const fs = require('fs')
@@ -55,11 +55,9 @@ yargs.command({
            type: 'string' 
         }
     },
-    handler: function (argv) {
-        // console.log('Adding a new note', argv)
-        console.log('Title: ' + argv.title)
-        console.log('Body: ' + argv.body)
-    } 
+    handler: function(argv) {
+        notes.addNote(argv.title, argv.body)
+    }
 })
 
 // Create remove command
